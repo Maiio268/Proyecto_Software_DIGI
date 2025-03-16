@@ -28,3 +28,8 @@ El bot digitaliza un proceso que se hace normalmente de forma manual, esto permi
 - Gestión centralizada de datos: Los datos de los horarios se almacenan en una base de datos SQLite, asegurando que la información esté organizada y accesible en cualquier momento.
 - Optimización del tiempo: Permite a los usuarios ver su horario completo de la semana en formato de tabla, lo que facilita la visualización de los datos a los usuarios ya que se pueden visualizar de una forma fácil e intuitiva, esto ahorra tiempo en la consulta del usuario.
 ## Tecnologías Habilitadoras Digitales
+1) Si no has utilizado THD, ¿cómo podrías implementarlas para enriquecer tu solución?
+Se podría realizar una integración con Big Data y Analítica, esto conllevaría lo siguiente:
+- Registro y análisis de uso del bot: se analizarían patrones de uso para mejorar la interfaz y sugerir horarios automáticamente.
+- Optimización de horarios: se integrarían algoritmos de optimización para sugerir la mejor distribución de materias en el horario según el uso histórico o el curso.
+También se podría integrar Inteligencia Artificial (IA) para la generación de horarios automática, el algoritmo se basaría en la disponibilidad de profesores, preferencias del usuario.... y que así genere automáticamente el mejor horario posible. Esto facilitaría el hecho de que los usuarios ingresen manualmente cada materia y aula.
