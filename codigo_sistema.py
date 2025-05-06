@@ -4,14 +4,14 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext
 from tabulate import tabulate
 
-# Configurar logging
+# Configure logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-# Conectar con la base de datos
+# Connect to the database
 conn = sqlite3.connect("horarios.db", check_same_thread=False)
 c = conn.cursor()
 
-# Crear tabla si no existe
+# Create table if it doesn't exist
 c.execute('''CREATE TABLE IF NOT EXISTS horarios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     usuario_id INTEGER,
@@ -23,10 +23,10 @@ c.execute('''CREATE TABLE IF NOT EXISTS horarios (
 )''')
 conn.commit()
 
-# Horarios permitidos con recreo
+# Allowed class hours with break
 HORAS_CLASES = ["08:00", "09:00", "10:00", "11:30", "12:30", "13:30"]
 
-# Función para iniciar el bot
+# Function to start the bot
 async def start(update: Update, context: CallbackContext) -> None:
     await update.message.reply_text(
         "¡Bienvenido al bot de horarios escolares! 📅\n"
@@ -36,12 +36,12 @@ async def start(update: Update, context: CallbackContext) -> None:
         "🗑 /eliminar_horarios - Eliminar todos los horarios guardados."
     )
 
-# Función para iniciar el proceso de agregar horario
+# Function to start the process of adding a schedule
 async def agregar_horario(update: Update, context: CallbackContext) -> None:
     await update.message.reply_text("Vamos a agregar un horario. Introduce el día (Lunes - Viernes):")
     context.user_data["estado"] = "esperando_dia"
 
-# Manejo de los mensajes del usuario
+# Handle user messages
 async def manejar_mensaje(update: Update, context: CallbackContext) -> None:
     usuario_id = update.message.from_user.id
     texto = update.message.text
@@ -71,7 +71,7 @@ async def manejar_mensaje(update: Update, context: CallbackContext) -> None:
         hora_fin = f"{int(hora_inicio[:2]) + 1}:00"
         context.user_data["materias"].append((materia, aula, hora_inicio, hora_fin))
         
-        # Guardar en la base de datos
+        # Save in the database
         conn = sqlite3.connect("horarios.db")
         c = conn.cursor()
         c.execute("INSERT INTO horarios (usuario_id, dia, hora_inicio, hora_fin, materia, aula) VALUES (?, ?, ?, ?, ?, ?)",
@@ -86,7 +86,7 @@ async def manejar_mensaje(update: Update, context: CallbackContext) -> None:
             await update.message.reply_text("✅ Día completo. Si deseas agregar otro día usa /agregar_horario.")
             context.user_data.clear()
 
-# Función para ver los horarios guardados
+# Function to view saved schedules
 async def ver_horarios(update: Update, context: CallbackContext) -> None:
     usuario_id = update.message.from_user.id
     conn = sqlite3.connect("horarios.db")
@@ -103,7 +103,7 @@ async def ver_horarios(update: Update, context: CallbackContext) -> None:
     mensaje = f"📅 Horario semanal:\n```{tabla}```"
     await update.message.reply_text(mensaje, parse_mode="MarkdownV2")
 
-# Función para eliminar todos los horarios
+# Function to delete all schedules
 async def eliminar_horarios(update: Update, context: CallbackContext) -> None:
     usuario_id = update.message.from_user.id
     conn = sqlite3.connect("horarios.db")
@@ -113,7 +113,7 @@ async def eliminar_horarios(update: Update, context: CallbackContext) -> None:
     conn.close()
     await update.message.reply_text("🗑 Todos tus horarios han sido eliminados correctamente.")
 
-# Configuración del bot
+# Bot configuration
 def main():
     application = Application.builder().token("8080929287:AAHMjVw55BZgf5m_Uzw8AY50ZtQHjawX1Uo").build()
 

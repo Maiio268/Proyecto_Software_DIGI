@@ -1,36 +1,47 @@
-# Descripción del proyecto
-El proyecto consiste en la creación de un software que crea y modifica horarios escolares semanales sin que existan conflictos, esto se desarrolla con un archivo Python que incluye todo el código necesario y, respecto a la interacción con el usuario, se ha creado un bot de telegram a través del cual el usuario puede crear y eliminar estos horarios.
+# Project Description
+The project consists of the creation of a software that creates and modifies weekly school schedules without conflicts. This is developed with a Python file that includes all the necessary code and, regarding user interaction, a Telegram bot has been created through which the user can create and delete these schedules.
 
-# ¿Qué hace el código?
-El código Python del archivo codigo_sistema.py hace lo siguiente:
-Permite a los usuarios gestionar un de manera sencilla. Los usuarios pueden agregar, visualizar y eliminar horarios mediante comandos de Telegram. El bot almacena la información en una base de datos SQLite y organiza las materias respetando los horarios y un recreo.
-Los comandos existentes en el código son los siguientes:
-- /start: Muestra un mensaje de bienvenida con los comandos disponibles.
-- /agregar_horario: Permite ingresar días, materias y aulas.
-- /ver_horarios: Muestra el horario que el usuario haya creado en forma de tabla.
-- /eliminar_horarios: Borra todos los horarios creados por el usuario.
+# Proyect Motivation
+Creating school schedules can be a difficult task, especially when trying to avoid conflicts between subjects, teachers, and classrooms. This project was born to simplify and automate that process. With a user-friendly Telegram bot interface, anyone can easily create, view, and delete weekly schedules without needing technical knowledge. The system ensures there are no time conflicts and respects break times, providing a smart and accessible way to manage school timetables.
 
-# ¿Cómo probarlo?
-1) Clonar el repositorio:
+# ¿What does the code do?
+The Python code in the file codigo_sistema.py does the following:
+It allows users to manage schedules easily. Users can add, view, and delete schedules through Telegram commands. The bot stores the information in a SQLite database and organizes the subjects while respecting class times and a break.
+The available commands in the code are:
+- **/start:** Displays a welcome message with the available commands.
+- **/agregar_horario:** Allows the user to enter days, subjects, and classrooms.
+- **/ver_horarios:** Displays the schedule created by the user in table format.
+- **/eliminar_horarios:** Deletes all schedules created by the user.
+
+# Deployment on Different Platforms
+## PC
+1) **Clone the repository:**
 
 ```
 git clone <URL_DEL_REPOSITORIO>
 cd Proyecto_Software_DIGI
 ```
-2) Instalar dependencias:
+2) **Install dependencies:**
 
 ```
 pip install -r requirements.txt
 ```
 
-3) Ejecutar el bot:
-Para ejecutar el bot, abre la terminal y escribe el siguiente comando:
+3) **Run the bot:**
+To run the bot, open the terminal and type the following command:
 ```
 python codigo_sistema.py
 ```
-IMPORTANTE: Asegurate que estás posicionado en la carpeta del proyecto.
+IMPORTANT: Make sure you are in the project folder.
 
-4) Ahora inicia sesión con tu cuenta en Telegram y escribe en el buscador (posicionado en la parte superior de la pantalla de la aplicación Telegram) el nombre del bot: SmartHorarioBot.
+4) **Now log in to your Telegram account and type the bot's name in the search bar (located at the top of the Telegram app screen): SmartHorarioBot.**
 
-5) Ahora ya puedes interactuar con el bot usando los comandos disponibles.
+5) **Now you can interact with the bot using the available commands.**
+
+## Mobile Phone
+To use the Telegram bot on your mobile phone, you must **start the bot on your computer first** (follow the steps explained before in the deployment on PC).
+Once the bot is running:
+1) Open the Telegram app on your mobile device. 
+2) Search for the bot by its name: SmartHorarioBot.
+3) Start a conversation and use the available commands.
 
