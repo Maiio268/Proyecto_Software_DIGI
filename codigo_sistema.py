@@ -28,6 +28,16 @@ HORAS_CLASES = ["08:00", "09:00", "10:00", "11:30", "12:30", "13:30"]
 
 # Function to start the bot
 async def start(update: Update, context: CallbackContext) -> None:
+    """
+    Inicia el bot y muestra un mensaje de bienvenida con los comandos disponibles.
+
+    Args:
+        update (Update): El objeto que contiene la información sobre el mensaje recibido.
+        context (CallbackContext): El contexto del bot que contiene datos adicionales.
+
+    Returns:
+        None
+    """
     await update.message.reply_text(
         "¡Bienvenido al bot de horarios escolares! 📅\n"
         "Comandos disponibles:\n"
@@ -38,11 +48,31 @@ async def start(update: Update, context: CallbackContext) -> None:
 
 # Function to start the process of adding a schedule
 async def agregar_horario(update: Update, context: CallbackContext) -> None:
+    """
+    Inicia el proceso de agregar un horario y solicita el día al usuario.
+
+    Args:
+        update (Update): El objeto que contiene la información sobre el mensaje recibido.
+        context (CallbackContext): El contexto del bot que contiene datos adicionales.
+
+    Returns:
+        None
+    """
     await update.message.reply_text("Vamos a agregar un horario. Introduce el día (Lunes - Viernes):")
     context.user_data["estado"] = "esperando_dia"
 
 # Handle user messages
 async def manejar_mensaje(update: Update, context: CallbackContext) -> None:
+    """
+    Maneja los mensajes del usuario y gestiona el estado del proceso de agregar horarios.
+
+    Args:
+        update (Update): El objeto que contiene la información sobre el mensaje recibido.
+        context (CallbackContext): El contexto del bot que contiene datos adicionales.
+
+    Returns:
+        None
+    """
     usuario_id = update.message.from_user.id
     texto = update.message.text
 
@@ -88,6 +118,16 @@ async def manejar_mensaje(update: Update, context: CallbackContext) -> None:
 
 # Function to view saved schedules
 async def ver_horarios(update: Update, context: CallbackContext) -> None:
+    """
+    Muestra los horarios guardados del usuario en formato de tabla.
+
+    Args:
+        update (Update): El objeto que contiene la información sobre el mensaje recibido.
+        context (CallbackContext): El contexto del bot que contiene datos adicionales.
+
+    Returns:
+        None
+    """
     usuario_id = update.message.from_user.id
     conn = sqlite3.connect("horarios.db")
     c = conn.cursor()
@@ -105,6 +145,16 @@ async def ver_horarios(update: Update, context: CallbackContext) -> None:
 
 # Function to delete all schedules
 async def eliminar_horarios(update: Update, context: CallbackContext) -> None:
+    """
+    Elimina todos los horarios guardados por el usuario.
+
+    Args:
+        update (Update): El objeto que contiene la información sobre el mensaje recibido.
+        context (CallbackContext): El contexto del bot que contiene datos adicionales.
+
+    Returns:
+        None
+    """
     usuario_id = update.message.from_user.id
     conn = sqlite3.connect("horarios.db")
     c = conn.cursor()
@@ -115,6 +165,15 @@ async def eliminar_horarios(update: Update, context: CallbackContext) -> None:
 
 # Bot configuration
 def main():
+    """
+    Configura y ejecuta el bot, añadiendo los controladores de comandos y mensajes.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
     application = Application.builder().token("8080929287:AAHMjVw55BZgf5m_Uzw8AY50ZtQHjawX1Uo").build()
 
     application.add_handler(CommandHandler("start", start))

@@ -31,7 +31,7 @@ This guide will help you get started contributing to the project, and it also in
     git push origin feature/your-feature-name
     ```
 
-7) **Create a Pull Request**
+7) **Create a Pull Requesst**
    - Go to your fork on GitHub and click “New Pull Request”.
    - Compare your branch with the original repository's main branch.
    - Write a description of what you changed and why it’s useful.
