@@ -51,7 +51,5 @@ Once the bot is running:
 # Contributing
 🛠️🤝 If you are eager to contribute to the project or have any ideas to help with its development, [Check out the CONTRIBUTING file](./CONTRIBUTING.md) and feel free to add any suggestions or improvements you think might be useful. We welcome new ideas, bug fixes, feature additions, and anything else that can help make the project better.
 
-
-
-GitHub Page
-
+# Wiki
+Accede a la Wiki del proyecto a través del siguiente enlace: https://maiio268.github.io/Proyecto_Software_DIGI/
