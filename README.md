@@ -52,7 +52,6 @@ Once the bot is running:
 🛠️🤝 If you are eager to contribute to the project or have any ideas to help with its development, [Check out the CONTRIBUTING file](./CONTRIBUTING.md) and feel free to add any suggestions or improvements you think might be useful. We welcome new ideas, bug fixes, feature additions, and anything else that can help make the project better.
 
 
-Dokka
 
 GitHub Page
 

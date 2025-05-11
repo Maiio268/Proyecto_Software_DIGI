@@ -34,22 +34,42 @@ La interacción entre las áreas digitalizadas (Producción y Comunicaciones) y 
 
 ## Criterio 6e) Necesidades presentes y futuras:
 **¿Qué necesidades actuales de la empresa resuelve tu software?**
-
+- Automatización de la planificación horaria: Elimina la necesidad de crear los horarios manualmente, lo cual normalmente es un proceso complejo y propenso a errores humanos.
+- Ahorro de tiempo y recursos: Al reducir el trabajo manual y ofrecer al solución que ofrece el software, se libera tiempo del personal para otras tareas.
+- Prevención de conflictos: Se asegura de que no hayan conflictos entre asignaturas, aulas o profesores, ya que el bot de telegram crea los horarios sin ningún tipo de mezcla ni conflicto.
+- Acceso rápido y sencillo: Permite que, cualquier usuario, sin conocimientos técnicos, pueda crear, ver o eliminar horarios desde su móvil o PC usando el bot de Telegram, mejorando la accesibilidad y usabilidad del sistema.
+- Centralización de la información: Toda la información queda registrada en una base de datos SQLite, lo que permite mantener un control claro y organizado de los horarios generados, los usuarios pueden consultar la información contenida en la base de datos escribiendo un solo comando.
 
 ## Criterio 6f) Relación con tecnologías:
 **¿Qué tecnologías habilitadoras has empleado y cómo impactan en las áreas de la empresa?**
-
+De momento de se han empleado tecnologías habilitadoras en el software, pero el proyecto puede perfectamente integrar estas tecnologías, por ejemplo:
+- Integración con IA: en un futuro se podría añadir un sistema planteado por Inteligencia Artificial que sugiera horarios óptimos con algoritmos inteligentes. **Impacto:** Esta tecnología mejoraría significativamente el área de planificación, reduciendo el tiempo necesario para crear horarios, disminuyendo errores humanos y optimizando los recursos disponibles.
+- Integración con la nube: también se podría integrar computación en la nube, consistiría en mover la base de datos a la nube de los usuarios, esto permitiría a los usuarios acceder a sus horarios en cualquier momento y desde cualquier lugar, garantizando mayor disponibilidad y escalabilidad del sistema. **Impacto:** Esta mejora beneficiaría el área de tecnología y soporte, al facilitar el acceso remoto, aumentar la disponibilidad del sistema.
 **¿Qué beneficios específicos aporta la implantación de estas tecnologías?**
+Los beneficios ya han sido mencionados anteriormente:
+- Integración con IA: ahorra tiempo, mejora la toma de decisiones, reduce el tiempo necesario para crear horarios, disminuye los errores humanos y optimiza los recursos disponibles.
+- Integración con la nube: mayor seguridad y respaldo de datos, facilita el acceso remoto y aumenta la disponibilidad del sistema.
 
 ## Criterio 6g) Brechas de seguridad:
 **¿Qué posibles brechas de seguridad podrían surgir al implementar tu software?**
-
+- Acceso no autorizado a los datos: Si no se valida correctamente la cuenta de los usuarios de Telegram, podrían haber accesos indebidos a los horarios creados por otros usuarios.
+- Falta de cifrado en la transmisión de datos: Aunque Telegram es una aplicación que cifra los mensajes, si el sistema se conecta a servicios externos (como una futura nube), podrían exponerse datos si no se utiliza HTTPS o un cifrado adecuado.
+- Pérdida de datos: Al estar la base de datos en local (SQLite), un fallo del equipo o borrado accidental puede provocar que se pierda toda la información.
 **¿Qué medidas concretas propondrías para mitigarlas?**
-
+Para evitar estas brechas se podrían llevar a cabo las siguientes medidas:
+- Control de identidad por ID de usuario de Telegram: Validar y asociar los horarios exclusivamente al ID único del usuario que los crea, impidiendo el acceso a la información de otrosv usuarios.
+- Cifrado de datos y uso de HTTPS: Si se migra a la nube en el futuro, lo más conveniente sería que todas las comunicaciones se realicen a través de HTTPS y que los datos sensibles estén cifrados en reposo y en tránsito.
+- Copias de seguridad automáticas: Crear un sistema que haga copias de seguridad cada cierto tiempo de la base de datos, evitando así la pérdida de datos ante posibles fallos.
 ## Criterio 6h) Tratamiento de datos y análisis:
 **¿Cómo se gestionan los datos en tu software y qué metodologías utilizas?**
-
+Los datos se gestionan a través de una base de datos SQLite, una base de datos local ligera que almacena toda la información relacionada con los horarios de cada usuario, cada usuario de Telegram tiene asociado un ID único, esto permite identificar de forma segura qué horarios pertenecen a quién. La base de datos guarda esta relación para que solo el usuario creador pueda ver o eliminar sus horarios.
+Se utiliza una metodología de persistencia estructurada, donde cada acción del usuario (crear, ver, eliminar horarios) actualiza directamente la base de datos, garantizando que la información esté siempre sincronizada con el estado del sistema.
 **¿Qué haces para garantizar la calidad y consistencia de los datos?**
+- Se controla que los datos introducidos (días, horas, aulas, asignaturas) sigan un formato correcto y lógico antes de guardarse.
+- No se permiten añadir horarios que se solapen entre sí o que se salten los tiempos de descanso definidos, garantizando una buena planificación.
+- Gracias al uso del ID de Telegram, se impide que los datos se mezclen entre distintos usuarios.
+- Uso de mensajes de confirmación de cada acción realizada: El bot informa al usuario después de cada acción (por ejemplo, “Horario guardado correctamente”), para asegurar que la operación se ha realizado como se esperaba.
+
 
 
 
