@@ -2,5 +2,5 @@
 
 ## Estructura del proyecto
 
-- [`codigo_sistema.py`](/codigo_sistema.py): Contiene la lógica del bot y conexión a la base de datos.
-- [`requirements.txt`](/requirements.txt): Dependencias necesarias.
+- `codigo_sistema.py`: Contiene la lógica del bot y conexión a la base de datos.
+- `requirements.txt`: Dependencias necesarias.
