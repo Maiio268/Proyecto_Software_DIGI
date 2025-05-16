@@ -1,6 +1,6 @@
-# Documentación para Desarrolladores
+# Developer Documentation
 
-## Estructura del proyecto
+## Project Structure
 
-- `codigo_sistema.py`: Contiene la lógica del bot y conexión a la base de datos.
-- `requirements.txt`: Dependencias necesarias.
+- `codigo_sistema.py`: Contains the bot logic and database connection.
+- `requirements.txt`: Required dependencies.

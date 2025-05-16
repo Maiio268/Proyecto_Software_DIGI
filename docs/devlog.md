@@ -1,29 +1,28 @@
-### 🔹 `devlog.md` (Diario del desarrollo del Proyecto)
+### 🔹 `devlog.md` (Project Development Diary)
 
-# Devlog - Etapas del Proyecto
+# Devlog – Project Stages
 
-## 🟢 Etapa 1: Inicio del proyecto
-- Se define el objetivo del software: gestión de horarios escolares.
-- Elección de tecnologías: Python + Telegram + SQLite.
-- Pensamiento de cómo va a estructurarse todo
-- Pensamiento de cómo van a interactuar las tecnologías entre sí
+## 🟢 Stage 1: Project Start
+- The software objective is defined: school schedule management.
+- Technology choices: Python + Telegram + SQLite.
+- Planning how everything will be structured.
+- Planning how the technologies will interact with each other.
 
-## 🟡 Etapa 2: Desarrollo básico
-- Desarrollo del código bot de Telegram con comandos funcionales.
-- Se implementa la base de datos SQLite.
-- Primeras pruebas locales.
-- Se añade la licencia abierta y se crea el archivo LICENSE.
+## 🟡 Stage 2: Basic Development
+- Development of the Telegram bot code with functional commands.
+- SQLite database implementation.
+- First local tests.
+- Open license added and LICENSE file created.
 
-## 🔵 Etapa 3: Interfaz y pruebas
-- Mejoras en la interacción con el usuario (una interfaz más intuitiva para el uso del bot).
-- Se valida la entrada de datos.
-- Se prueban casos con solapamiento y errores.
-- Se implementa una buena estética para el bot de Telegram
-- Se escribe el README (descripción del proyecto, instrucciones para usar el software, requerimientos e instalaciones necesarias...)
+## 🔵 Stage 3: Interface and Testing
+- Improvements in user interaction (a more intuitive interface for using the bot).
+- Input validation is implemented.
+- Testing of overlapping cases and errors.
+- A good aesthetic design is implemented for the Telegram bot.
+- README is written (project description, instructions for using the software, requirements, and installation guide).
 
-## 🟣 Etapa 4: Documentación y despliegue
-- Se documenta el código en el formato pedido.
-- Se crea la wiki.
-- Se modifica el README.
-- Se prepara una versión estable para release y se publica la primera release.
-
+## 🟣 Stage 4: Documentation and Deployment
+- Code is documented in the required format.
+- Wiki is created.
+- README is modified.
+- A stable version is prepared for release, and the first release is published.

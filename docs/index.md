@@ -1,8 +1,8 @@
 # SmartHorarioBot Wiki
 
-Documentación oficial del proyecto **SmartHorarioBot**.
+Official documentation for the project **SmartHorarioBot**.
 
-## Contenido de la documentación
+## Documentation contents
 
-- [Documentación para desarrolladores](./desarrolladores.md)
-- [Devlog - Etapas del proyecto](./devlog.md)
+- [Developer documentation](./desarrolladores.md)
+- [Devlog - Project stages](./devlog.md)
